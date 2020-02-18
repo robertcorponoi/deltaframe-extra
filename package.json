@@ -1,0 +1,48 @@
+{
+  "name": "deltaframe-extra",
+  "version": "1.0.0",
+  "description": "An animation and game loop manager with extra features.",
+  "module": "deltaframe-extra.js",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "bundle": "rollup -c",
+    "bundle:watch": "rollup -c --watch",
+    "type-check:build:bundle": "npm run type-check && npm run build && npm run bundle",
+    "test": "node test/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertcorponoi/deltaframe-extra"
+  },
+  "keywords": [
+    "game",
+    "loop",
+    "game loop",
+    "animation",
+    "frame",
+    "delta"
+  ],
+  "typings": "lib/index.d.ts",
+  "author": "Robert Corponoi",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "rollup": "^1.31.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "sinon": "^8.1.1",
+    "typescript": "^3.7.5"
+  }
+}
